@@ -34,12 +34,11 @@ gulp.task('styles', function() {
 
 gulp.task('js', function() {
 	return gulp.src([
-		'bower_components/tiny-slider/dist/tiny-slider.js',
 		'app/libs/flickity/dist/flickity.pkgd.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Mifify js (opt.)
+	.pipe(uglify())
 	.pipe(gulp.dest('app/js'))
 	.pipe(browserSync.reload({ stream: true }))
 });

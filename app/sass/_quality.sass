@@ -1,0 +1,44 @@
+@import "vars"
+@import "_mixins/media"
+
+.quality
+  margin-top: -56px
+  &__block
+    width: 58%
+    height: 401px
+    background-color: $accent
+    margin: auto
+    position: relative
+    z-index: -2
+  h2
+    font-size: 50px
+    font-weight: 500
+    line-height: 70px
+    text-transform: uppercase
+    letter-spacing: 20px
+    writing-mode: vertical-rl
+    transform: rotate(180deg) translate(50%,50%)
+    white-space: nowrap
+    position: absolute
+    top: 50%
+    left: 50%
+    margin: 0
+  +media-max(1280px)
+    h2
+      font-size: 45px
+  +media-max(992px)
+    h2
+      font-size: 35px
+  +media-max(768px)
+    margin-top: 34px
+    h2
+      transform: rotate(0) translate(-50%,-50%)
+      writing-mode: horizontal-tb
+      line-height: 45px
+      width: 100%
+      white-space: normal
+      text-align: center
+      letter-spacing: 14px
+    &__block
+      height: 46px
+      width: 100%

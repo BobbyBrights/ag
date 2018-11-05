@@ -1,0 +1,113 @@
+@import "vars"
+@import "_mixins/media"
+
+.footer
+  padding: 48px 0
+  .container
+    padding: 0 50px
+  &__block
+    display: flex
+    align-items: center
+  &__company
+    font-family: $default-font
+    font-size: 25px
+    font-weight: 500
+    text-transform: uppercase
+    letter-spacing: 8px
+    margin: 0
+    white-space: nowrap
+  &__copyright
+    color: #646464
+    font-size: 14px
+    font-weight: 300
+    line-height: 17px
+    letter-spacing: 0
+    margin: 0
+  &__info,
+  &__social
+    flex: 1
+  &__menu
+    width: 673px
+    text-align: center
+    padding-top: 8px
+  &__social
+    padding-top: 10px
+  +media-max(1200px)
+    justify-content: space-between
+    &__info,
+    &__social
+      flex: none
+    &__menu
+      flex: 1
+      width: auto
+  +media-max(920px)
+    &__social
+      display: none
+  +media-max(790px)
+    &__block
+      flex-wrap: wrap
+    &__info,
+    &__menu
+      width: 100%
+    &__info
+      order: 2
+      text-align: center
+      margin-top: 5px
+    &__company
+      display: none
+  +media-max(560px)
+    padding: 22px 0
+    .container
+      padding: 0 25px
+    &__info
+      margin-top: 0
+    &__copyright
+      font-size: 8px
+
+
+
+
+
+.footer-menu
+  display: flex
+  padding: 0
+  margin: 0
+  justify-content: center
+  max-width: 100%
+  &__item
+    color: #0b0b0b
+    font-size: 12px
+    font-weight: 500
+    line-height: 25px
+    text-transform: uppercase
+    letter-spacing: 4px
+    &:before
+      display: none
+  &__item+&__item
+    margin-left: 43px
+  +media-max(1200px)
+    &__item+&__item
+      margin-left: 20px
+  +media-max(560px)
+    &__item
+      font-size: 8px
+    &__item+&__item
+      margin-left: 26px
+  +media-max(405px)
+    &__item+&__item
+      margin-left: 10px
+      letter-spacing: 2px
+
+.social
+  display: flex
+  padding: 0
+  margin: 0
+  justify-content: flex-end
+  &__item
+    &:before
+      display: none
+  &__item+&__item
+    margin-left: 64px
+  +media-max(1200px)
+    &__item+&__item
+      margin-left: 30px

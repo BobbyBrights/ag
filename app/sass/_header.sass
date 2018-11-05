@@ -1,0 +1,83 @@
+@import "vars"
+
+.header
+  padding: 42px 0 46px
+  &__block
+    display: flex
+    align-items: center
+  &__nav,
+  &__cart
+    flex: 1
+  &__cart
+    text-align: right
+  +media-max(560px)
+    padding: 30px 0
+    &__logo
+      img
+        width: 34px
+
+.top-menu
+  display: flex
+  justify-content: space-between
+  font-size: 10px
+  padding: 0 73px 0 0
+  list-style: none
+  line-height: 25px
+  margin: 0 -10px
+  &__item
+    padding: 0
+    margin: 0 10px
+    a
+      color: inherit
+      text-transform: uppercase
+      letter-spacing: 4px
+      display: inline-block
+    &:before
+      display: none
+  +media-max(1100px)
+    display: none
+
+.cart-button
+  text-transform: uppercase
+  font-size: 10px
+  letter-spacing: 4px
+  &:hover
+    text-decoration: none
+  &__count
+    width: 32px
+    height: 32px
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    border: 1px solid black
+    border-radius: 50%
+    font-size: 12px
+    font-weight: 600
+    margin-left: 1px
+    letter-spacing: normal
+  +media-max(580px)
+    font-family: $default-font
+    &__count
+      width: auto
+      height: auto
+      border: none
+      border-radius: 0
+      font-weight: 500
+      &::before
+        content: "( "
+      &::after
+        content: " )"
+
+.menu-btn
+  background: transparent
+  border: none
+  padding: 0
+  height: 13px
+  color: #000000
+  font-size: 10px
+  font-weight: 500
+  text-transform: uppercase
+  letter-spacing: 4px
+  display: none
+  +media-max(1100px)
+    display: block

@@ -1,0 +1,296 @@
+@import "vars"
+@import "_mixins/media"
+
+.top-section
+  height: 958px
+  &__block
+    position: relative
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__bg
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    padding: 43px 0 50px 50px
+    width: 71%
+    background-color: rgb(254, 223, 193)
+    background-clip: content-box
+    z-index: -1
+    &:after
+      content: ""
+      position: absolute
+      width: calc(100% - 50px)
+      top: 0
+      left: 0
+      height: 100%
+      background: url(../img/top-section__bg.jpg) center no-repeat
+      background-size: cover
+      opacity: .2
+      filter: grayscale(100%)
+      mix-blend-mode: luminosity
+  &__content
+    padding-left: 50px
+    padding-bottom: 70px
+    width: 500px
+    margin-right: 50px
+  p
+    line-height: 25px
+    margin-bottom: 17px
+  &__cart
+    display: flex
+    align-items: flex-end
+  &__select-color
+    flex: 1
+    margin-right: 38px
+    height: 32px
+    font-size: 12px
+    text-transform: uppercase
+    line-height: 30px
+    padding-left: 13px
+    border-bottom: 2px solid #000000
+    font-weight: 500
+    letter-spacing: 4px
+    word-spacing: -1px
+    cursor: pointer
+    position: relative
+    &:after
+      content: ""
+      top: 10px
+      right: 13px
+      position: absolute
+      width: 8px
+      height: 8px
+      border-right: 2px solid black
+      border-bottom: 2px solid black
+      transform: rotate(45deg)
+  .btn
+    margin-top: 30px
+  &__slider
+    display: flex
+    align-items: center
+    padding-bottom: 48px
+  footer
+    left: 0
+    position: absolute
+    bottom: 96px
+    width: 100%
+    padding: 0 100px 0 150px
+    display: flex
+    justify-content: space-between
+  &__footer-links
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    li
+      color: #0b0b0b
+      font-size: 10px
+      font-weight: 500
+      line-height: 25px
+      text-transform: uppercase
+      letter-spacing: 4px
+      &+li
+        margin-left: 60px
+      &::before
+        display: none
+  +media-max(1280px)
+    height: 800px
+    footer
+      padding: 0 50px 0 100px
+  +media-max(840px)
+    padding-bottom: 60px
+    height: auto
+    &__block
+      flex-wrap: wrap
+    &__slider,
+    &__content
+      width: 100%
+    &__content
+      order: 2
+      margin-top: 150px
+      position: relative
+      padding-bottom: 0
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        height: 125px
+        width: 2px
+        top: -142px
+        left: 50%
+        margin-left: -1px
+        background: black
+    &__slider
+      padding-top: 81px
+      justify-content: center
+    &__bg
+      height: 657px
+      padding: 40px 0 40px 40px
+      width: 63%
+      margin-left: -40px
+    footer
+      display: none
+    h1
+      text-align: center
+      br
+        display: none
+    .btn
+      margin: 47px auto 0
+      transform: translate(-8px)
+  +media-max(560px)
+    &__content
+      padding: 0
+      margin-right: 0
+    p
+      line-height: 16px
+      text-align: center
+    &__select-color
+      height: 20px
+      font-size: 10px
+      line-height: 20px
+      margin-right: 48px
+      &::after
+        top: 3px
+
+
+
+.top-slider
+  width: 423px
+  overflow: hidden
+  outline: none
+  &__item
+    width: 423px
+  +media-max(1280px)
+    width: 300px
+    height: 500px
+    &__item
+      width: 300px
+      height: 500px
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+
+
+
+
+
+.top-slider-navigation
+  list-style: none
+  width: 145px
+  margin-left: 54px
+  margin-bottom: 133px
+  text-align: right
+  padding: 0
+  &__item
+    width: 100%
+    margin-bottom: 55px
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      width: 0
+      height: 2px
+      background: black
+      transition: .2s ease-in-out
+      right: 0
+      bottom: 2px
+    &::before
+      display: none
+    &:last-child
+      margin-bottom: 0
+    &.active,
+    &:hover
+      &::after
+        width: 300px
+  button
+    border: none
+    width: 100%
+    text-transform: uppercase
+    font-size: 10px
+    font-weight: 500
+    line-height: 20px
+    letter-spacing: 4px
+    text-align: right
+    padding: 0
+    margin-right: -3px
+  +media-max(1380px)
+    margin-left: 0
+  +media-max(1280px)
+    margin-bottom: 0
+    &__item
+      &.active,
+      &:hover
+        &::after
+          width: 200px
+  +media-max(992px)
+    width: 33px
+    margin-left: -26px
+    &__item
+      height: 2px
+      line-height: 0
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+      &::after
+        display: none
+      &.active
+        button
+          width: 100%
+    button
+      height: 2px
+      font-size: 0
+      line-height: 0
+      background: black
+      width: 17px
+      margin-right: 0
+
+
+
+.goods-quantity
+  display: flex
+  &__minus, &__plus
+    width: 36px
+    height: 36px
+    padding: 0
+    background: transparent
+    border: 1px solid black
+    border-radius: 50%
+    font-size: 16px
+    font-weight: 600
+    transition: .2s ease-in-out
+    &:hover
+      background: white
+      border: 1px solid white
+  input
+    background: transparent
+    text-align: center
+    border: none
+    padding: 0
+    width: 40px
+    font-size: 16px
+    letter-spacing: 0
+    -moz-appearance: textfield
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+      -webkit-appearance: none
+      margin: 0
+    &:disabled
+      color: black
+  +media-max(768px)
+    &__minus, &__plus
+      &:hover
+        background: $accent
+        border: 1px solid $accent
+  +media-max(560px)
+    &__minus, &__plus
+      width: 23px
+      height: 23px
+      font-size: 8px
+    input
+      font-size: 8px
+      width: 26px

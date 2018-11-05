@@ -33,3 +33,14 @@ gallerySlider.on('change', function (index) {
     galleryTextSliderItems[index].classList.add("active");
 });
 
+var jsScroll = document.getElementsByClassName('js-scroll');
+for (var i = 0; i < jsScroll.length; i++) {
+    jsScroll[i].addEventListener("click", function (e) {
+        e.preventDefault();
+        var selector = this.getAttribute('href');
+        document.querySelector(selector).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+}
+
